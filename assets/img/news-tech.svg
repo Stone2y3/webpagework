@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480" role="img" aria-labelledby="newsWarehouseTitle">
+  <title id="newsWarehouseTitle">智能仓储示意插画</title>
+  <defs>
+    <linearGradient id="nwBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#062a1e"/>
+      <stop offset="1" stop-color="#0a4a34"/>
+    </linearGradient>
+    <linearGradient id="nwBox" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#33c98d"/>
+      <stop offset="1" stop-color="#0c7a50"/>
+    </linearGradient>
+    <radialGradient id="nwGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#68ffc0" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#68ffc0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#nwBg)"/>
+  <circle cx="610" cy="120" r="230" fill="url(#nwGlow)"/>
+  <g stroke="#39b98b" stroke-width="1" opacity="0.22" fill="none">
+    <path d="M0 360 L800 240 M0 420 L800 300 M0 480 L800 360"/>
+    <path d="M80 480 L300 120 M220 480 L440 120 M360 480 L580 120 M500 480 L720 120 M640 480 L860 120"/>
+  </g>
+  <!-- 等距货架 -->
+  <g transform="translate(120 170)">
+    <path d="M0 90 L120 30 L240 90 L120 150 Z" fill="#0d5138" stroke="#3cd79f" stroke-width="2"/>
+    <path d="M0 90 L0 150 L120 210 L120 150 Z" fill="#083a28" stroke="#2aa87b" stroke-width="2"/>
+    <path d="M120 150 L120 210 L240 150 L240 90 Z" fill="#062e20" stroke="#2aa87b" stroke-width="2"/>
+    <g fill="url(#nwBox)" stroke="#8bffd0" stroke-width="1.5">
+      <path d="M22 78 L62 58 L102 78 L62 98 Z"/>
+      <path d="M62 98 L62 122 L102 102 L102 78 Z" opacity="0.8"/>
+      <path d="M48 44 L84 26 L120 44 L84 62 Z"/>
+    </g>
+  </g>
+  <g transform="translate(380 210)">
+    <path d="M0 80 L110 25 L220 80 L110 135 Z" fill="#105c40" stroke="#48e2ab" stroke-width="2"/>
+    <path d="M0 80 L0 132 L110 187 L110 135 Z" fill="#094130" stroke="#2fb98a" stroke-width="2"/>
+    <path d="M110 135 L110 187 L220 132 L220 80 Z" fill="#073526" stroke="#2fb98a" stroke-width="2"/>
+    <g fill="url(#nwBox)" stroke="#9bffd4" stroke-width="1.5">
+      <path d="M20 70 L58 51 L96 70 L58 89 Z"/>
+      <path d="M58 89 L58 112 L96 93 L96 70 Z" opacity="0.82"/>
+    </g>
+  </g>
+  <!-- 数据线 -->
+  <path d="M170 120 L330 60 L500 110" fill="none" stroke="#7cffd0" stroke-width="2" stroke-dasharray="6 8" opacity="0.8"/>
+  <g fill="#7cffd0">
+    <circle cx="170" cy="120" r="5"/>
+    <circle cx="330" cy="60" r="5"/>
+    <circle cx="500" cy="110" r="5"/>
+  </g>
+  <g fill="none" stroke="#6cf6c0" opacity="0.45">
+    <circle cx="650" cy="330" r="56" stroke-dasharray="3 8"/>
+    <circle cx="650" cy="330" r="34"/>
+  </g>
+  <path d="M0 430 Q200 390 400 420 T800 400 V480 H0 Z" fill="#041d14" opacity="0.7"/>
+</svg>

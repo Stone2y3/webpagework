@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-labelledby="qrTitle qrDesc">
+  <title id="qrTitle">微信公众号二维码占位图</title>
+  <desc id="qrDesc">用于版式演示的二维码占位图形，不能实际扫描。</desc>
+  <rect width="120" height="120" rx="8" fill="#ffffff"/>
+  <g fill="#10231b">
+    <!-- 三个定位角 -->
+    <path d="M10 10h28v28H10z M14 14v20h20V14z" fill-rule="evenodd"/>
+    <rect x="18" y="18" width="12" height="12"/>
+    <path d="M82 10h28v28H82z M86 14v20h20V14z" fill-rule="evenodd"/>
+    <rect x="90" y="18" width="12" height="12"/>
+    <path d="M10 82h28v28H10z M14 86v20h20V86z" fill-rule="evenodd"/>
+    <rect x="18" y="90" width="12" height="12"/>
+    <!-- 数据模块（示意） -->
+    <rect x="46" y="10" width="4" height="4"/><rect x="54" y="10" width="4" height="4"/><rect x="66" y="10" width="4" height="4"/><rect x="74" y="10" width="4" height="4"/>
+    <rect x="46" y="18" width="4" height="4"/><rect x="58" y="18" width="4" height="4"/><rect x="70" y="18" width="4" height="4"/>
+    <rect x="50" y="26" width="4" height="4"/><rect x="62" y="26" width="4" height="4"/><rect x="74" y="26" width="4" height="4"/>
+    <rect x="10" y="46" width="4" height="4"/><rect x="18" y="46" width="4" height="4"/><rect x="30" y="46" width="4" height="4"/><rect x="42" y="46" width="4" height="4"/><rect x="54" y="46" width="4" height="4"/><rect x="66" y="46" width="4" height="4"/><rect x="78" y="46" width="4" height="4"/><rect x="90" y="46" width="4" height="4"/><rect x="102" y="46" width="4" height="4"/>
+    <rect x="14" y="54" width="4" height="4"/><rect x="26" y="54" width="4" height="4"/><rect x="38" y="54" width="4" height="4"/><rect x="50" y="54" width="4" height="4"/><rect x="62" y="54" width="4" height="4"/><rect x="74" y="54" width="4" height="4"/><rect x="86" y="54" width="4" height="4"/><rect x="98" y="54" width="4" height="4"/>
+    <rect x="10" y="62" width="4" height="4"/><rect x="22" y="62" width="4" height="4"/><rect x="34" y="62" width="4" height="4"/><rect x="46" y="62" width="4" height="4"/><rect x="58" y="62" width="4" height="4"/><rect x="70" y="62" width="4" height="4"/><rect x="82" y="62" width="4" height="4"/><rect x="94" y="62" width="4" height="4"/>
+    <rect x="10" y="70" width="4" height="4"/><rect x="26" y="70" width="4" height="4"/><rect x="42" y="70" width="4" height="4"/><rect x="54" y="70" width="4" height="4"/><rect x="66" y="70" width="4" height="4"/><rect x="78" y="70" width="4" height="4"/><rect x="90" y="70" width="4" height="4"/><rect x="102" y="70" width="4" height="4"/>
+    <rect x="46" y="78" width="4" height="4"/><rect x="58" y="78" width="4" height="4"/><rect x="70" y="78" width="4" height="4"/><rect x="82" y="78" width="4" height="4"/><rect x="98" y="78" width="4" height="4"/>
+    <rect x="46" y="86" width="4" height="4"/><rect x="54" y="86" width="4" height="4"/><rect x="66" y="86" width="4" height="4"/><rect x="78" y="86" width="4" height="4"/><rect x="90" y="86" width="4" height="4"/><rect x="102" y="86" width="4" height="4"/>
+    <rect x="46" y="94" width="4" height="4"/><rect x="62" y="94" width="4" height="4"/><rect x="74" y="94" width="4" height="4"/><rect x="86" y="94" width="4" height="4"/><rect x="98" y="94" width="4" height="4"/>
+    <rect x="54" y="102" width="4" height="4"/><rect x="70" y="102" width="4" height="4"/><rect x="82" y="102" width="4" height="4"/><rect x="94" y="102" width="4" height="4"/>
+  </g>
+  <rect x="48" y="48" width="24" height="24" rx="5" fill="#00a758"/>
+  <text x="60" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="#ffffff">JDL</text>
+</svg>

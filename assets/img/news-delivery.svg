@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480" role="img" aria-labelledby="newsDeliveryTitle">
+  <title id="newsDeliveryTitle">夜间配送示意插画</title>
+  <defs>
+    <linearGradient id="ndBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#041a24"/>
+      <stop offset="0.6" stop-color="#073229"/>
+      <stop offset="1" stop-color="#04170f"/>
+    </linearGradient>
+    <linearGradient id="ndVan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eafff5"/>
+      <stop offset="1" stop-color="#9fd9bf"/>
+    </linearGradient>
+    <linearGradient id="ndRoad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12402f"/>
+      <stop offset="1" stop-color="#061c13"/>
+    </linearGradient>
+    <radialGradient id="ndGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#45e6b0" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#45e6b0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#ndBg)"/>
+  <circle cx="600" cy="110" r="200" fill="url(#ndGlow)"/>
+  <g fill="#d8ffe9" opacity="0.7">
+    <circle cx="120" cy="70" r="1.6"/>
+    <circle cx="240" cy="45" r="1.3"/>
+    <circle cx="360" cy="86" r="1.8"/>
+    <circle cx="500" cy="40" r="1.2"/>
+    <circle cx="690" cy="70" r="1.6"/>
+    <circle cx="740" cy="150" r="1.2"/>
+  </g>
+  <!-- 城市剪影 -->
+  <g fill="#06251c" opacity="0.9">
+    <rect x="30" y="240" width="60" height="150"/>
+    <rect x="100" y="200" width="44" height="190"/>
+    <rect x="156" y="265" width="72" height="125"/>
+    <rect x="540" y="225" width="56" height="165"/>
+    <rect x="610" y="255" width="80" height="135"/>
+    <rect x="700" y="215" width="50" height="175"/>
+  </g>
+  <g fill="#59e3ac" opacity="0.55">
+    <rect x="46" y="258" width="10" height="6"/>
+    <rect x="66" y="258" width="10" height="6"/>
+    <rect x="112" y="220" width="8" height="5"/>
+    <rect x="126" y="220" width="8" height="5"/>
+    <rect x="172" y="282" width="8" height="5"/>
+    <rect x="192" y="282" width="8" height="5"/>
+    <rect x="556" y="244" width="9" height="5"/>
+    <rect x="626" y="272" width="9" height="5"/>
+    <rect x="716" y="234" width="9" height="5"/>
+  </g>
+  <!-- 道路 -->
+  <path d="M0 480 L800 360 L800 480 Z" fill="url(#ndRoad)"/>
+  <path d="M0 456 Q240 420 480 408 T800 392" fill="none" stroke="#4ad9a5" stroke-width="3" stroke-dasharray="24 20" opacity="0.5"/>
+  <!-- 货车 -->
+  <g transform="translate(170 230)">
+    <ellipse cx="210" cy="160" rx="210" ry="20" fill="#020e09" opacity="0.6"/>
+    <rect x="20" y="20" width="250" height="112" rx="10" fill="url(#ndVan)"/>
+    <rect x="20" y="20" width="250" height="112" rx="10" fill="none" stroke="#f2fff8" stroke-width="1.5" opacity="0.7"/>
+    <rect x="42" y="44" width="204" height="8" rx="4" fill="#2fc78f"/>
+    <rect x="42" y="64" width="126" height="7" rx="3.5" fill="#6e9c8b" opacity="0.6"/>
+    <path d="M200 86 l-18 30 h16 l-9 28 30 -38 h-16 l12 -20 Z" fill="#00a758"/>
+    <path d="M270 46 q42 2 52 38 l8 48 h-60 Z" fill="#eafff5"/>
+    <path d="M284 62 q28 2 36 30 h-36 Z" fill="#083428"/>
+    <g fill="#030f0a" stroke="#8ee9c5" stroke-width="2.5">
+      <circle cx="84" cy="136" r="26"/>
+      <circle cx="232" cy="136" r="26"/>
+    </g>
+    <g fill="#2fd497">
+      <circle cx="84" cy="136" r="7"/>
+      <circle cx="232" cy="136" r="7"/>
+    </g>
+    <path d="M20 92 h-36" stroke="#7cffd0" stroke-width="3" opacity="0.8"/>
+  </g>
+  <!-- 路线 -->
+  <path d="M430 290 Q520 220 620 260 T760 210" fill="none" stroke="#7cffd0" stroke-width="2" stroke-dasharray="5 9" opacity="0.65"/>
+  <g fill="#7cffd0">
+    <circle cx="430" cy="290" r="4"/>
+    <circle cx="620" cy="260" r="4"/>
+    <circle cx="760" cy="210" r="4"/>
+  </g>
+</svg>

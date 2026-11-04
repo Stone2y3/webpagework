@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480" role="img" aria-labelledby="newsGreenTitle">
+  <title id="newsGreenTitle">绿色循环包装示意插画</title>
+  <defs>
+    <linearGradient id="ngBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a3b28"/>
+      <stop offset="1" stop-color="#0f6647"/>
+    </linearGradient>
+    <linearGradient id="ngLeaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b2ffc9"/>
+      <stop offset="1" stop-color="#25b878"/>
+    </linearGradient>
+    <radialGradient id="ngGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#d6ffd9" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#d6ffd9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#ngBg)"/>
+  <circle cx="390" cy="220" r="260" fill="url(#ngGlow)"/>
+  <g fill="none" stroke="#b7ffd3" opacity="0.25">
+    <circle cx="400" cy="240" r="180"/>
+    <circle cx="400" cy="240" r="220" stroke-dasharray="4 10"/>
+  </g>
+  <!-- 循环箭头 -->
+  <g fill="none" stroke="url(#ngLeaf)" stroke-width="14" stroke-linecap="round">
+    <path d="M250 240 a150 150 0 0 1 150 -150"/>
+    <path d="M550 240 a150 150 0 0 1 -150 150"/>
+  </g>
+  <g fill="#b7ffd3">
+    <path d="M400 68 l34 34 h-68 Z"/>
+    <path d="M400 412 l-34 -34 h68 Z"/>
+  </g>
+  <!-- 循环箱 -->
+  <g transform="translate(300 155)">
+    <path d="M0 70 L100 20 L200 70 L100 120 Z" fill="#eafff2" opacity="0.95"/>
+    <path d="M0 70 L0 140 L100 190 L100 120 Z" fill="#a9e5c6"/>
+    <path d="M100 120 L100 190 L200 140 L200 70 Z" fill="#7fd3ad"/>
+    <path d="M100 20 L100 120" stroke="#3bbf88" stroke-width="2" opacity="0.5"/>
+    <path d="M60 92 L82 114 L140 56" fill="none" stroke="#12965c" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- 叶片 -->
+  <g fill="url(#ngLeaf)" opacity="0.8">
+    <path d="M120 120 q60 -40 100 6 q-52 52 -100 -6z"/>
+    <path d="M650 340 q48 -30 78 6 q-42 40 -78 -6z" opacity="0.7"/>
+    <path d="M620 110 q36 -22 58 4 q-30 30 -58 -4z" opacity="0.5"/>
+  </g>
+  <g fill="#d8ffe5" opacity="0.75">
+    <circle cx="170" cy="350" r="2.4"/>
+    <circle cx="260" cy="90" r="2"/>
+    <circle cx="580" cy="200" r="2.4"/>
+    <circle cx="690" cy="250" r="2"/>
+  </g>
+</svg>
