@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>京东物流 - 省心高效 | 技术驱动的供应链服务商（学习复刻）</title>
+  <meta name="description" content="京东物流官网首页静态复刻（学习用途，非官方）：一体化供应链、快递快运、仓配一体、冷链、国际服务与物流科技。纯 HTML/CSS/JavaScript 实现，响应式布局。">
+  <meta name="theme-color" content="#00a758">
+  <meta property="og:title" content="京东物流 - 省心高效（学习复刻）">
+  <meta property="og:description" content="技术驱动的一体化供应链物流服务，助力千万家企业降本增效。本页为课程作业演示，非官方站点。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.documentElement.classList.add('js');
+    /* 若脚本执行异常，移除 js 标记，保证正文内容仍然可见 */
+    window.addEventListener('error', function () {
+      document.documentElement.classList.remove('js');
+    });
+  </script>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <!-- 内联 SVG 图标库：避免外部 CDN 依赖，保证离线双击可用 -->
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#22d488"/>
+        <stop offset="1" stop-color="#008a52"/>
+      </linearGradient>
+    </defs>
+    <symbol id="brand-mark" viewBox="0 0 44 44">
+      <rect width="44" height="44" rx="12" fill="url(#brandGrad)"/>
+      <path d="M22 9 35 15.5 22 22 9 15.5Z" fill="#ffffff"/>
+      <path d="m9 21.5 13 6.5 13-6.5" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="m9 27.6 13 6.5 13-6.5" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.62"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4.5 4.5"/>
+    </symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.1 3.6-7 8-7s8 2.9 8 7"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6 6 18"/>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m6 9 6 6 6-6"/>
+    </symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 12h16m-6-6 6 6-6 6"/>
+    </symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 12H4m6-6-6 6 6 6"/>
+    </symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 20V4m-6 6 6-6 6 6"/>
+    </symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17 17 7M8 7h9v9"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.6 3h3.1l1.6 5-2.4 1.5a12.5 12.5 0 0 0 5.6 5.6L16 12.7l5 1.6v3.1A2.6 2.6 0 0 1 18.4 20 16.4 16.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3Z"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>
+    </symbol>
+    <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m21 8-9-5-9 5v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5M12 13v8"/>
+    </symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 6h13v11H2z"/><path d="M15 9h4l3 3.5V17h-7"/><circle cx="6.5" cy="18.5" r="2"/><circle cx="18" cy="18.5" r="2"/>
+    </symbol>
+    <symbol id="i-warehouse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 21V9l9-5 9 5v12"/><path d="M7 21v-7h10v7M3 21h18"/>
+    </symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/><path d="m9 5 3 3 3-3M9 19l3-3 3 3"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>
+    </symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m5 12 5 5 9-10"/>
+    </symbol>
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <path d="M8 5l11 7-11 7V5Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24">
+      <path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 4C10 4 4 9 4 16c0 2 1 4 3 4 7 0 13-6 13-16Z"/><path d="M4 20c3-6 7-9 12-11"/>
+    </symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3v5M12 16v5M3 12h5M16 12h5M5.6 5.6l3.5 3.5M14.9 14.9l3.5 3.5M18.4 5.6l-3.5 3.5M9.1 14.9l-3.5 3.5"/>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/>
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 20V10M10 20V4M16 20v-7M2 20h20"/>
+    </symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h2v-6H6M20 13v4a2 2 0 0 1-2 2h-2v-6h2"/>
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12a8 8 0 0 1-8 8H7l-4 3v-7a8 8 0 0 1 8-8h2a8 8 0 0 1 8 4Z"/><circle cx="9" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="12" r="1" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="m8.7 10.7 6.6-3.4M8.7 13.3l6.6 3.4"/>
+    </symbol>
+    <symbol id="i-video" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="6" width="18" height="14" rx="3"/><path d="m10 10 5 3-5 3v-6Z" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3v12m-5-5 5 5 5-5M4 21h16"/>
+    </symbol>
+  </svg>
+
+  <!-- 顶部信息条 -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__note"><span class="topbar__dot" aria-hidden="true"></span>技术驱动的供应链服务商 · 学习复刻演示站</p>
+      <ul class="topbar__links">
+        <li><a href="#about">企业介绍</a></li>
+        <li><a href="#news">新闻中心</a></li>
+        <li><a href="#footer" data-demo="投资者关系">投资者关系</a></li>
+        <li><a class="topbar__tel" href="tel:950616"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-phone"/></svg>950616</a></li>
+        <li><span class="topbar__lang">简体中文</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 吸顶导航 -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <a class="brand" href="#home" aria-label="京东物流 JD Logistics 首页">
+        <svg class="brand__mark" aria-hidden="true"><use href="#brand-mark"/></svg>
+        <span class="brand__text"><strong>京东物流</strong><span>JD LOGISTICS</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="主导航">
+        <ul class="nav-list">
+          <li class="nav-item has-mega">
+            <a class="nav-link" href="#services" aria-expanded="false">
+              服务与产品<svg class="icon icon--xs nav-chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </a>
+            <div class="mega" role="group" aria-label="服务与产品菜单">
+              <div class="container mega__inner">
+                <div class="mega__cols">
+                  <div class="mega__col">
+                    <p class="mega__title">企业服务</p>
+                    <a class="mega__link" href="#service-express"><span>快递服务</span><small>当日达 / 次日达</small></a>
+                    <a class="mega__link" href="#service-freight"><span>快运服务</span><small>重货门到门</small></a>
+                    <a class="mega__link" href="#service-supply"><span>仓配一体</span><small>一盘货管理</small></a>
+                    <a class="mega__link" href="#service-cold"><span>冷链服务</span><small>全程温控</small></a>
+                    <a class="mega__link" href="#service-global"><span>国际服务</span><small>跨境全链路</small></a>
+                  </div>
+                  <div class="mega__col">
+                    <p class="mega__title">个人服务</p>
+                    <a class="mega__link" href="#service-express"><span>寄快递</span><small>上门取件</small></a>
+                    <a class="mega__link" href="#service-freight"><span>发重货</span><small>大件无忧</small></a>
+                    <a class="mega__link" href="#service-global"><span>寄国际</span><small>全球可达</small></a>
+                    <a class="mega__link" href="#services"><span>找服务</span><small>安装 / 维修</small></a>
+                  </div>
+                  <div class="mega__col">
+                    <p class="mega__title">物流科技</p>
+                    <a class="mega__link" href="#tech"><span>智能仓储</span><small>自动化仓群</small></a>
+                    <a class="mega__link" href="#tech"><span>数智化供应链</span><small>算法与预测</small></a>
+                    <a class="mega__link" href="#tech"><span>智能物流园区</span><small>园区一体化</small></a>
+                    <a class="mega__link" href="#tech"><span>教育产业学院</span><small>产教融合</small></a>
+                  </div>
+                </div>
+                <a class="mega__promo" href="#about">
+                  <span class="mega__promo-tag">1 对 1 服务</span>
+                  <strong>不确定选哪种服务？<br>让供应链顾问帮你规划</strong>
+                  <span class="mega__promo-link">预约咨询<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+                  <span class="mega__promo-orb" aria-hidden="true"></span>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item has-mega">
+            <a class="nav-link" href="#solutions" aria-expanded="false">
+              解决方案<svg class="icon icon--xs nav-chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </a>
+            <div class="mega mega--compact" role="group" aria-label="解决方案菜单">
+              <div class="container mega__inner">
+                <div class="mega__cols mega__cols--two">
+                  <div class="mega__col">
+                    <p class="mega__title">行业解决方案</p>
+                    <a class="mega__link" href="#solutions"><span>消费品</span><small>全渠道履约</small></a>
+                    <a class="mega__link" href="#solutions"><span>3C</span><small>高价值交付</small></a>
+                    <a class="mega__link" href="#solutions"><span>家电家居</span><small>送装一体</small></a>
+                  </div>
+                  <div class="mega__col">
+                    <p class="mega__title">更多行业</p>
+                    <a class="mega__link" href="#solutions"><span>服饰</span><small>逆向物流</small></a>
+                    <a class="mega__link" href="#solutions"><span>汽车</span><small>入厂与备件</small></a>
+                    <a class="mega__link" href="#solutions"><span>生鲜</span><small>产地直发</small></a>
+                  </div>
+                </div>
+                <a class="mega__promo" href="#about">
+                  <span class="mega__promo-tag">行业洞察</span>
+                  <strong>把行业难题<br>交给懂行的人</strong>
+                  <span class="mega__promo-link">获取方案<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+                  <span class="mega__promo-orb" aria-hidden="true"></span>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item has-mega">
+            <a class="nav-link" href="#tech" aria-expanded="false">
+              物流科技<svg class="icon icon--xs nav-chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </a>
+            <div class="mega mega--small" role="group" aria-label="物流科技菜单">
+              <div class="container mega__inner">
+                <div class="mega__cols mega__cols--one">
+                  <div class="mega__col">
+                    <a class="mega__link" href="#tech"><span>智能仓储</span><small>自动化分拣与机器人协同</small></a>
+                    <a class="mega__link" href="#tech"><span>数智化供应链</span><small>预测、补货与全链路可视</small></a>
+                    <a class="mega__link" href="#tech"><span>智能物流园区</span><small>园区规划与一体化运营</small></a>
+                  </div>
+                </div>
+                <a class="mega__promo" href="#about">
+                  <span class="mega__promo-tag">科技输出</span>
+                  <strong>把验证过的能力<br>变成你的能力</strong>
+                  <span class="mega__promo-link">了解科技产品<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+                  <span class="mega__promo-orb" aria-hidden="true"></span>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#esg">可持续发展</a></li>
+
+          <li class="nav-item has-mega">
+            <a class="nav-link" href="#about" aria-expanded="false">
+              关于京东物流<svg class="icon icon--xs nav-chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </a>
+            <div class="mega mega--small" role="group" aria-label="关于京东物流菜单">
+              <div class="container mega__inner">
+                <div class="mega__cols mega__cols--one">
+                  <div class="mega__col">
+                    <a class="mega__link" href="#about"><span>企业介绍</span><small>成为全球值得信赖的供应链服务商</small></a>
+                    <a class="mega__link" href="#news"><span>新闻中心</span><small>公司动态与行业洞察</small></a>
+                    <a class="mega__link" href="#footer"><span>联系我们</span><small>客服热线 950616</small></a>
+                  </div>
+                </div>
+                <a class="mega__promo" href="#footer">
+                  <span class="mega__promo-tag">加入我们</span>
+                  <strong>与 40 万+ 伙伴<br>一起把包裹送达</strong>
+                  <span class="mega__promo-link">查看联系方式<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+                  <span class="mega__promo-orb" aria-hidden="true"></span>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <form class="search" role="search" id="headerSearch" aria-label="站内搜索">
+          <label class="sr-only" for="searchInput">搜索服务或解决方案</label>
+          <input class="search__input" id="searchInput" type="search" placeholder="搜索服务 / 方案" autocomplete="off">
+          <button class="search__btn" type="submit" aria-label="搜索">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+          </button>
+        </form>
+        <button class="header__login" type="button" data-demo="登录">登录</button>
+        <button class="btn btn--primary btn--sm header__register" type="button" data-demo="注册">免费注册</button>
+        <button class="header__search-toggle" id="searchToggle" type="button" aria-label="打开搜索" aria-controls="mobileDrawer" aria-expanded="false">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-controls="mobileDrawer" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- 首屏轮播 -->
+    <section class="hero" id="home" role="region" aria-roledescription="轮播" aria-label="京东物流核心服务介绍">
+      <div class="hero__slides">
+        <article class="hero-slide is-active" data-slide="0" data-title="智能仓储" aria-hidden="false">
+          <img class="hero__bg" src="assets/img/hero-warehouse.svg" alt="智能仓储中心示意插画" width="1600" height="900" fetchpriority="high">
+          <div class="hero__shade"></div>
+          <div class="container hero__content">
+            <p class="eyebrow eyebrow--light">JDL · 一体化供应链物流服务</p>
+            <h1 class="hero__title">省心高效<br><em>让每一份托付</em><br>准时抵达</h1>
+            <p class="hero__lead">以技术驱动的一体化供应链物流服务，连接仓储、运输、配送与科技，助力千万家企业降本增效。</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--lg" href="#about">立即合作<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              <a class="btn btn--glass btn--lg" href="#tracker" data-focus-tracker>查询快递</a>
+            </div>
+            <ul class="hero__badges">
+              <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>覆盖全国 99% 区县</li>
+              <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>220+ 国家和地区</li>
+              <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>7×24 小时服务</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="hero-slide" data-slide="1" data-title="一体化供应链" aria-hidden="true">
+          <img class="hero__bg" src="assets/img/hero-global.svg" alt="全球供应链网络示意插画" width="1600" height="900" loading="lazy">
+          <div class="hero__shade"></div>
+          <div class="container hero__content">
+            <p class="eyebrow eyebrow--light">INTEGRATED SUPPLY CHAIN</p>
+            <h2 class="hero__title">一盘货管理<br><em>让库存转得更快</em></h2>
+            <p class="hero__lead">从工厂到消费者，仓配一体、智能补货与全链路可视化，帮助品牌构建更敏捷、更确定的供应链。</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--lg" href="#service-supply">了解仓配一体<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              <a class="btn btn--glass btn--lg" href="#about">预约方案咨询</a>
+            </div>
+            <ul class="hero__badges">
+              <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>全国仓网协同</li>
+              <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>库存智能预测</li>
+              <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>全链路可视</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="hero-slide" data-slide="2" data-title="绿色物流" aria-hidden="true">
+          <img class="hero__bg" src="assets/img/hero-green.svg" alt="绿色低碳物流示意插画" width="1600" height="900" loading="lazy">
+          <div class="hero__shade"></div>
+          <div class="container hero__content">
+            <p class="eyebrow eyebrow--light">GREEN LOGISTICS · 青流计划</p>
+            <h2 class="hero__title">有速度<br><em>更有温度</em></h2>
+            <p class="hero__lead">青流计划持续推进绿色包装、清洁能源与循环回收，让每一次交付都对环境更友好，让增长更可持续。</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--lg" href="#esg">了解可持续发展<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              <a class="btn btn--glass btn--lg" href="#news">查看 ESG 实践</a>
+            </div>
+            <ul class="hero__badges">
+              <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>绿色包装</li>
+              <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>清洁能源</li>
+              <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>循环回收</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="container hero__footer">
+        <div class="hero__dots" role="group" aria-label="轮播图切换">
+          <button class="hero__dot is-active" type="button" data-go="0" aria-label="切换到第 1 张：智能仓储" aria-current="true"><span></span></button>
+          <button class="hero__dot" type="button" data-go="1" aria-label="切换到第 2 张：一体化供应链" aria-current="false"><span></span></button>
+          <button class="hero__dot" type="button" data-go="2" aria-label="切换到第 3 张：绿色物流" aria-current="false"><span></span></button>
+        </div>
+        <div class="hero__nav">
+          <span class="hero__count"><strong id="heroCurrent">01</strong><span aria-hidden="true">/</span>03</span>
+          <button class="hero__arrow hero__pause" id="heroPause" type="button" aria-label="暂停轮播" aria-pressed="false">
+            <svg class="icon" aria-hidden="true"><use id="heroPauseIcon" href="#i-pause"/></svg>
+          </button>
+          <button class="hero__arrow" id="heroPrev" type="button" aria-label="上一张">
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+          </button>
+          <button class="hero__arrow" id="heroNext" type="button" aria-label="下一张">
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </button>
+        </div>
+      </div>
+      <p class="sr-only" id="heroStatus" aria-live="polite" aria-atomic="true">第 1 张，共 3 张：智能仓储</p>
+    </section>
+
+    <!-- 快递查询 -->
+    <section class="tracker" id="tracker" aria-label="快递查询">
+      <div class="container">
+        <div class="tracker__card">
+          <div class="tracker__intro">
+            <span class="tracker__icon" aria-hidden="true"><svg class="icon"><use href="#i-box"/></svg></span>
+            <div>
+              <h2>查快递</h2>
+              <p>输入运单号，实时掌握物流轨迹</p>
+            </div>
+          </div>
+          <form class="tracker__form" id="trackForm" novalidate>
+            <label class="sr-only" for="trackInput">运单号</label>
+            <input id="trackInput" name="tracking" type="text" inputmode="numeric" placeholder="请输入运单号 / 手机号" autocomplete="off">
+            <button class="btn btn--primary" type="submit">立即查询</button>
+          </form>
+          <div class="tracker__links">
+            <a href="#service-express">寄快递<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a href="#services" data-demo="网点查询">查网点</a>
+            <a href="#footer" data-demo="运费时效">运费时效</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 核心业务 -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy reveal">
+            <p class="eyebrow">SERVICES &amp; PRODUCTS</p>
+            <h2 class="section-title">覆盖全链路的物流服务</h2>
+            <p class="section-desc">从一张订单到全球交付，六大核心服务能力，为不同规模的企业提供确定性的供应链支持。</p>
+          </div>
+          <a class="text-link reveal" href="#solutions" style="--delay:80ms">查看行业解决方案<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+
+        <div class="services__grid">
+          <article class="service-card service-card--featured reveal" id="service-express">
+            <span class="service-card__num" aria-hidden="true">01</span>
+            <span class="service-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-box"/></svg></span>
+            <h3>快递服务</h3>
+            <p>京东特快、京东标快与生鲜特快，时效稳定、全程可视，覆盖个人寄件与企业发货全场景。</p>
+            <ul class="service-card__tags"><li>当日达</li><li>次日达</li><li>全程可视</li></ul>
+            <a class="service-card__link" href="#tracker">了解服务<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </article>
+
+          <article class="service-card reveal" id="service-freight" style="--delay:60ms">
+            <span class="service-card__num" aria-hidden="true">02</span>
+            <span class="service-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-truck"/></svg></span>
+            <h3>快运服务</h3>
+            <p>重货标快与整车直达，大件重货门到门，专业装卸与在途跟踪，保障货物安全抵达。</p>
+            <ul class="service-card__tags"><li>门到门</li><li>整车直达</li><li>在途跟踪</li></ul>
+            <a class="service-card__link" href="#about">了解服务<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </article>
+
+          <article class="service-card reveal" id="service-supply" style="--delay:120ms">
+            <span class="service-card__num" aria-hidden="true">03</span>
+            <span class="service-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-warehouse"/></svg></span>
+            <h3>仓配一体</h3>
+            <p>仓储、库存、配送一体化协同，一盘货管理让库存周转更快、全渠道履约更稳。</p>
+            <ul class="service-card__tags"><li>智能仓</li><li>一盘货</li><li>智能补货</li></ul>
+            <a class="service-card__link" href="#about">了解服务<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </article>
+
+          <article class="service-card reveal" id="service-cold" style="--delay:180ms">
+            <span class="service-card__num" aria-hidden="true">04</span>
+            <span class="service-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-snow"/></svg></span>
+            <h3>冷链服务</h3>
+            <p>生鲜冷链与医药冷链全程温控，实时监测温度变化，守护每一件温敏商品。</p>
+            <ul class="service-card__tags"><li>全程温控</li><li>实时监测</li><li>医药冷链</li></ul>
+            <a class="service-card__link" href="#about">了解服务<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </article>
+
+          <article class="service-card reveal" id="service-global" style="--delay:240ms">
+            <span class="service-card__num" aria-hidden="true">05</span>
+            <span class="service-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-globe"/></svg></span>
+            <h3>国际服务</h3>
+            <p>跨境快递、海外仓与清关服务，连接 220+ 国家和地区，让全球生意交付更简单。</p>
+            <ul class="service-card__tags"><li>全球网络</li><li>海外仓</li><li>清关服务</li></ul>
+            <a class="service-card__link" href="#about">了解服务<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </article>
+
+          <article class="service-card reveal" id="service-tech" style="--delay:300ms">
+            <span class="service-card__num" aria-hidden="true">06</span>
+            <span class="service-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-chip"/></svg></span>
+            <h3>物流科技</h3>
+            <p>以自动化、数字化与算法能力，输出可落地的智能仓储与数智化供应链方案。</p>
+            <ul class="service-card__tags"><li>自动化</li><li>数字化</li><li>算法能力</li></ul>
+            <a class="service-card__link" href="#tech">了解服务<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 行业解决方案 -->
+    <section class="section solutions" id="solutions">
+      <div class="container solutions__inner">
+        <div class="solutions__intro reveal">
+          <p class="eyebrow">INDUSTRY SOLUTIONS</p>
+          <h2 class="section-title">懂行业的供应链<br>才更懂你的生意</h2>
+          <p class="section-desc">围绕行业特性与履约场景，提供从仓网规划、库存管理到末端交付的一体化方案。</p>
+          <a class="btn btn--dark" href="#about">获取行业方案<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <dl class="solutions__mini">
+            <div><dt>6+</dt><dd>重点行业</dd></div>
+            <div><dt>200+</dt><dd>细分履约场景</dd></div>
+          </dl>
+        </div>
+
+        <div class="solutions__grid">
+          <a class="solution-card reveal" href="#about">
+            <span class="solution-card__num" aria-hidden="true">01</span>
+            <span class="solution-card__body"><strong>消费品</strong><span>全渠道履约与库存优化</span></span>
+            <svg class="icon solution-card__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+          <a class="solution-card reveal" href="#about" style="--delay:60ms">
+            <span class="solution-card__num" aria-hidden="true">02</span>
+            <span class="solution-card__body"><strong>3C</strong><span>高价值商品的安心交付</span></span>
+            <svg class="icon solution-card__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+          <a class="solution-card reveal" href="#about" style="--delay:120ms">
+            <span class="solution-card__num" aria-hidden="true">03</span>
+            <span class="solution-card__body"><strong>家电家居</strong><span>送装一体，一次到位</span></span>
+            <svg class="icon solution-card__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+          <a class="solution-card reveal" href="#about" style="--delay:180ms">
+            <span class="solution-card__num" aria-hidden="true">04</span>
+            <span class="solution-card__body"><strong>服饰</strong><span>退换货与逆向物流</span></span>
+            <svg class="icon solution-card__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+          <a class="solution-card reveal" href="#about" style="--delay:240ms">
+            <span class="solution-card__num" aria-hidden="true">05</span>
+            <span class="solution-card__body"><strong>汽车</strong><span>入厂物流与售后备件</span></span>
+            <svg class="icon solution-card__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+          <a class="solution-card reveal" href="#about" style="--delay:300ms">
+            <span class="solution-card__num" aria-hidden="true">06</span>
+            <span class="solution-card__body"><strong>生鲜</strong><span>产地直发与冷链保鲜</span></span>
+            <svg class="icon solution-card__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 物流科技 -->
+    <section class="section tech" id="tech">
+      <div class="tech__glow" aria-hidden="true"></div>
+      <div class="container tech__inner">
+        <div class="tech__intro reveal">
+          <p class="eyebrow eyebrow--light">LOGISTICS TECHNOLOGY</p>
+          <h2 class="section-title section-title--light">技术，是京东物流的<br>底层能力</h2>
+          <p class="section-desc section-desc--light">从自动化设备到供应链算法，技术贯穿仓储、分拣、运输与配送的每一个环节。</p>
+          <a class="btn btn--glass" href="#about">探索物流科技<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <p class="tech__watermark" aria-hidden="true">JDL TECH</p>
+        </div>
+
+        <div class="tech__list">
+          <article class="tech-item reveal">
+            <span class="tech-item__num" aria-hidden="true">01</span>
+            <div class="tech-item__body">
+              <h3>智能仓储</h3>
+              <p>亚洲一号智能仓群、自动化分拣与仓储机器人协同，让海量订单在高峰期依然高效履约。</p>
+              <ul><li>自动化分拣</li><li>仓储机器人</li><li>数字孪生</li></ul>
+            </div>
+            <svg class="icon tech-item__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </article>
+
+          <article class="tech-item reveal" style="--delay:80ms">
+            <span class="tech-item__num" aria-hidden="true">02</span>
+            <div class="tech-item__body">
+              <h3>数智化供应链</h3>
+              <p>以需求预测、智能补货与全链路可视化，帮助品牌把库存放在离消费者更近的地方。</p>
+              <ul><li>需求预测</li><li>智能补货</li><li>全链路可视</li></ul>
+            </div>
+            <svg class="icon tech-item__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </article>
+
+          <article class="tech-item reveal" style="--delay:160ms">
+            <span class="tech-item__num" aria-hidden="true">03</span>
+            <div class="tech-item__body">
+              <h3>绿色低碳</h3>
+              <p>绿色包装、园区光伏与新能源运力协同，让供应链效率与环境友好可以同时发生。</p>
+              <ul><li>绿色包装</li><li>园区光伏</li><li>新能源运力</li></ul>
+            </div>
+            <svg class="icon tech-item__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 数据展示 -->
+    <section class="stats" aria-labelledby="statsTitle">
+      <div class="container">
+        <div class="stats__head">
+          <div class="reveal">
+            <p class="eyebrow">JDL IN NUMBERS</p>
+            <h2 class="section-title" id="statsTitle">用规模与密度，兑现每一次承诺</h2>
+          </div>
+          <p class="stats__lead reveal" style="--delay:80ms">覆盖全国、连接全球的物流网络，是稳定履约的底气。数字滚动效果由原生 JavaScript 实现。</p>
+        </div>
+
+        <div class="stats__grid">
+          <article class="stat reveal">
+            <p class="stat__value"><span class="stat__num" data-target="220">220</span><span class="stat__suffix">+</span></p>
+            <p class="stat__label">国家和地区</p>
+            <p class="stat__desc">全球供应链网络覆盖</p>
+          </article>
+          <article class="stat reveal" style="--delay:80ms">
+            <p class="stat__value"><span class="stat__num" data-target="99">99</span><span class="stat__suffix">%</span></p>
+            <p class="stat__label">区县覆盖率</p>
+            <p class="stat__desc">末端配送网络持续下沉</p>
+          </article>
+          <article class="stat reveal" style="--delay:160ms">
+            <p class="stat__value"><span class="stat__num" data-target="3200">3,200</span><span class="stat__suffix">万㎡</span></p>
+            <p class="stat__label">仓储管理面积</p>
+            <p class="stat__desc">全国仓网协同与智能管理</p>
+          </article>
+          <article class="stat reveal" style="--delay:240ms">
+            <p class="stat__value"><span class="stat__num" data-target="40">40</span><span class="stat__suffix">万+</span></p>
+            <p class="stat__label">员工规模</p>
+            <p class="stat__desc">一线服务与技术团队</p>
+          </article>
+        </div>
+        <p class="stats__note">数据整理自公开资料，仅用于课程作业演示，不作为官方数据引用。</p>
+      </div>
+    </section>
+
+    <!-- 可持续发展 -->
+    <section class="section esg" id="esg">
+      <div class="container esg__inner">
+        <div class="esg__intro reveal">
+          <p class="eyebrow eyebrow--light">SUSTAINABILITY · 青流计划</p>
+          <h2 class="section-title section-title--light">让绿色成为<br>供应链的底色</h2>
+          <p class="section-desc section-desc--light">从包装减量到清洁能源，从循环回收到绿色园区，京东物流把可持续发展写进每一次交付。</p>
+          <a class="text-link text-link--light" href="#news">了解 ESG 实践<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+        <div class="esg__grid">
+          <article class="esg-card reveal">
+            <span class="esg-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-box"/></svg></span>
+            <h3>绿色包装</h3>
+            <p>推广可循环快递箱、瘦身胶带与免胶带纸箱，减少一次性包装消耗。</p>
+          </article>
+          <article class="esg-card reveal" style="--delay:80ms">
+            <span class="esg-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-spark"/></svg></span>
+            <h3>清洁能源</h3>
+            <p>仓储园区铺设分布式光伏，持续扩大新能源配送车辆的应用规模。</p>
+          </article>
+          <article class="esg-card reveal" style="--delay:160ms">
+            <span class="esg-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-leaf"/></svg></span>
+            <h3>循环回收</h3>
+            <p>推动纸箱回收与包装复用，让资源重新回到供应链中循环使用。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 新闻动态 -->
+    <section class="section news" id="news">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy reveal">
+            <p class="eyebrow">NEWSROOM</p>
+            <h2 class="section-title">新闻动态</h2>
+            <p class="section-desc">了解京东物流最新的服务升级、技术实践与可持续发展进展。</p>
+          </div>
+          <a class="text-link reveal" href="#news" data-demo="新闻列表" style="--delay:80ms">更多新闻<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+
+        <div class="news__grid">
+          <article class="news-card reveal">
+            <a class="news-card__media" href="#news" data-demo="新闻详情" aria-label="阅读新闻：京东物流升级一体化供应链服务">
+              <img src="assets/img/news-delivery.svg" alt="夜间配送示意插画" width="800" height="480" loading="lazy">
+              <span class="news-card__tag">公司动态</span>
+            </a>
+            <div class="news-card__body">
+              <p class="news-card__date"><time datetime="2026-11-02">2026.11.02</time></p>
+              <h3><a href="#news" data-demo="新闻详情">京东物流升级一体化供应链服务，助力品牌商家迎战年度大促</a></h3>
+              <p>通过智能预测、仓配协同与弹性运力，帮助商家在订单高峰期实现更稳履约与更低库存压力。</p>
+              <a class="news-card__more" href="#news" data-demo="新闻详情">阅读全文<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            </div>
+          </article>
+
+          <article class="news-card reveal" style="--delay:80ms">
+            <a class="news-card__media" href="#news" data-demo="新闻详情" aria-label="阅读新闻：智能仓群再升级">
+              <img src="assets/img/news-tech.svg" alt="智能仓储示意插画" width="800" height="480" loading="lazy">
+              <span class="news-card__tag">物流科技</span>
+            </a>
+            <div class="news-card__body">
+              <p class="news-card__date"><time datetime="2026-10-24">2026.10.24</time></p>
+              <h3><a href="#news" data-demo="新闻详情">智能仓群再升级：自动化分拣让履约效率持续提升</a></h3>
+              <p>新一代自动化分拣系统与仓储机器人协同作业，让高峰期订单处理能力再上一个台阶。</p>
+              <a class="news-card__more" href="#news" data-demo="新闻详情">阅读全文<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            </div>
+          </article>
+
+          <article class="news-card reveal" style="--delay:160ms">
+            <a class="news-card__media" href="#news" data-demo="新闻详情" aria-label="阅读新闻：青流计划年度进展">
+              <img src="assets/img/news-green.svg" alt="绿色循环包装示意插画" width="800" height="480" loading="lazy">
+              <span class="news-card__tag">可持续发展</span>
+            </a>
+            <div class="news-card__body">
+              <p class="news-card__date"><time datetime="2026-09-18">2026.09.18</time></p>
+              <h3><a href="#news" data-demo="新闻详情">青流计划发布年度进展：绿色包装与清洁能源持续推进</a></h3>
+              <p>从包装减量到园区光伏，从循环回收到新能源运力，绿色实践正在覆盖更多履约环节。</p>
+              <a class="news-card__more" href="#news" data-demo="新闻详情">阅读全文<svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            </div>
+          </article>
+        </div>
+        <p class="news__note">说明：以上新闻标题、日期与摘要均为课程演示文案，非京东物流官方发布。</p>
+      </div>
+    </section>
+
+    <!-- 关于 / 合作 -->
+    <section class="cta" id="about">
+      <img class="cta__bg" src="assets/img/hero-warehouse.svg" alt="" aria-hidden="true" width="1600" height="900" loading="lazy">
+      <div class="cta__shade"></div>
+      <div class="container cta__inner">
+        <div class="cta__copy reveal">
+          <p class="eyebrow eyebrow--light">ABOUT JDL</p>
+          <h2>让供应链更简单<br>让增长更确定</h2>
+          <p>无论你是刚起步的新品牌，还是覆盖全国的大型企业，京东物流都能为你量身定制供应链解决方案。</p>
+          <div class="cta__actions">
+            <a class="btn btn--light btn--lg" href="tel:950616">预约供应链顾问<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a class="btn btn--outline-light btn--lg" href="tel:950616"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>950616</a>
+          </div>
+          <p class="cta__note">顾问服务：工作日 9:00–18:00 · 客服热线 7×24 小时</p>
+        </div>
+
+        <div class="cta__card reveal" style="--delay:120ms">
+          <p class="cta__card-eyebrow">企业合作</p>
+          <h3>提交需求，<br>获取定制化方案</h3>
+          <ul>
+            <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>仓网规划与库存诊断</li>
+            <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>全渠道履约方案设计</li>
+            <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>专属客户经理跟进</li>
+          </ul>
+          <a class="btn btn--primary btn--block" href="tel:950616">立即咨询</a>
+          <p class="cta__card-note">或致电 950616，由顾问为你转接</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__main">
+        <div class="footer__brand">
+          <a class="brand brand--light" href="#home" aria-label="京东物流首页">
+            <svg class="brand__mark" aria-hidden="true"><use href="#brand-mark"/></svg>
+            <span class="brand__text"><strong>京东物流</strong><span>JD LOGISTICS</span></span>
+          </a>
+          <p>技术驱动的供应链服务商。以仓储、运输、配送与科技能力，连接每一份托付。</p>
+          <ul class="footer__contact">
+            <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-phone"/></svg><span>客服热线</span><a href="tel:950616">950616</a></li>
+            <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-mail"/></svg><span>商务邮箱</span><a href="mailto:jdl@example.com">jdl@example.com</a></li>
+            <li><svg class="icon icon--xs" aria-hidden="true"><use href="#i-clock"/></svg><span>服务时间</span>7×24 小时</li>
+          </ul>
+        </div>
+
+        <nav class="footer__col" aria-label="页脚服务与产品">
+          <h3>服务与产品</h3>
+          <ul>
+            <li><a href="#service-express">快递服务</a></li>
+            <li><a href="#service-freight">快运服务</a></li>
+            <li><a href="#service-supply">仓配一体</a></li>
+            <li><a href="#service-cold">冷链服务</a></li>
+            <li><a href="#service-global">国际服务</a></li>
+            <li><a href="#tech">物流科技</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="页脚解决方案">
+          <h3>解决方案</h3>
+          <ul>
+            <li><a href="#solutions">消费品</a></li>
+            <li><a href="#solutions">3C</a></li>
+            <li><a href="#solutions">家电家居</a></li>
+            <li><a href="#solutions">服饰</a></li>
+            <li><a href="#solutions">汽车</a></li>
+            <li><a href="#solutions">生鲜</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="页脚关于京东物流">
+          <h3>关于京东物流</h3>
+          <ul>
+            <li><a href="#about">企业介绍</a></li>
+            <li><a href="#news">新闻中心</a></li>
+            <li><a href="#esg">可持续发展</a></li>
+            <li><a href="#footer">联系我们</a></li>
+            <li><a href="#footer" data-demo="加入我们">加入我们</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col footer__follow">
+          <h3>关注我们</h3>
+          <div class="footer__qr">
+            <img src="assets/img/qr-placeholder.svg" alt="微信公众号二维码占位图" width="120" height="120" loading="lazy">
+            <span>扫码关注<br><small>（二维码为示意）</small></span>
+          </div>
+          <ul class="social">
+            <li><a href="#footer" aria-label="微信公众号（示意）" data-demo="微信公众号"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></a></li>
+            <li><a href="#footer" aria-label="微博（示意）" data-demo="微博"><svg class="icon" aria-hidden="true"><use href="#i-share"/></svg></a></li>
+            <li><a href="#footer" aria-label="视频号（示意）" data-demo="视频号"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__legal">
+        <p>© <span id="year">2026</span> 京东物流 JD Logistics 版权所有</p>
+        <p>京ICP备00000000号-1（占位） · 京公网安备 00000000000000号（占位）</p>
+        <ul>
+          <li><a href="#footer" data-demo="隐私政策">隐私政策</a></li>
+          <li><a href="#footer" data-demo="用户协议">用户协议</a></li>
+          <li><a href="#footer" data-demo="网站地图">网站地图</a></li>
+        </ul>
+      </div>
+
+      <p class="footer__disclaimer">本站为前端课程作业复刻页面，非京东物流官方网站，不用于任何商业用途；页面中的商标、文案仅作学习交流，插画为原创 SVG 示意图。</p>
+    </div>
+  </footer>
+
+  <!-- 移动端抽屉菜单 -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="移动端导航" aria-hidden="true">
+    <div class="drawer__head">
+      <a class="brand brand--sm" href="#home">
+        <svg class="brand__mark" aria-hidden="true"><use href="#brand-mark"/></svg>
+        <span class="brand__text"><strong>京东物流</strong><span>JD LOGISTICS</span></span>
+      </a>
+      <button class="drawer__close" id="drawerClose" type="button" aria-label="关闭菜单">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+
+    <div class="drawer__body">
+      <form class="drawer__search" role="search" id="drawerSearch" aria-label="移动端站内搜索">
+        <label class="sr-only" for="drawerSearchInput">搜索服务或解决方案</label>
+        <input id="drawerSearchInput" type="search" placeholder="搜索服务 / 方案" autocomplete="off">
+        <button type="submit" aria-label="搜索"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></button>
+      </form>
+
+      <nav class="drawer__nav" aria-label="移动端主导航">
+        <div class="acc">
+          <button class="acc__trigger" type="button" aria-expanded="false" aria-controls="accPanelServices">
+            服务与产品<svg class="icon acc__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <div class="acc__panel" id="accPanelServices" aria-hidden="true">
+            <div class="acc__inner">
+              <a href="#service-express">快递服务</a>
+              <a href="#service-freight">快运服务</a>
+              <a href="#service-supply">仓配一体</a>
+              <a href="#service-cold">冷链服务</a>
+              <a href="#service-global">国际服务</a>
+              <a href="#tech">物流科技</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc">
+          <button class="acc__trigger" type="button" aria-expanded="false" aria-controls="accPanelSolutions">
+            解决方案<svg class="icon acc__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <div class="acc__panel" id="accPanelSolutions" aria-hidden="true">
+            <div class="acc__inner">
+              <a href="#solutions">消费品</a>
+              <a href="#solutions">3C</a>
+              <a href="#solutions">家电家居</a>
+              <a href="#solutions">服饰</a>
+              <a href="#solutions">汽车</a>
+              <a href="#solutions">生鲜</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc">
+          <button class="acc__trigger" type="button" aria-expanded="false" aria-controls="accPanelTech">
+            物流科技<svg class="icon acc__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <div class="acc__panel" id="accPanelTech" aria-hidden="true">
+            <div class="acc__inner">
+              <a href="#tech">智能仓储</a>
+              <a href="#tech">数智化供应链</a>
+              <a href="#tech">智能物流园区</a>
+            </div>
+          </div>
+        </div>
+
+        <a class="drawer__flat" href="#esg">可持续发展</a>
+
+        <div class="acc">
+          <button class="acc__trigger" type="button" aria-expanded="false" aria-controls="accPanelAbout">
+            关于京东物流<svg class="icon acc__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <div class="acc__panel" id="accPanelAbout" aria-hidden="true">
+            <div class="acc__inner">
+              <a href="#about">企业介绍</a>
+              <a href="#news">新闻中心</a>
+              <a href="#footer">联系我们</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="drawer__actions">
+        <a class="btn btn--primary btn--block" href="#about">合作咨询</a>
+        <button class="btn btn--ghost btn--block" type="button" data-demo="登录 / 注册">登录 / 注册</button>
+      </div>
+      <p class="drawer__hotline">客服热线 <a href="tel:950616">950616</a></p>
+    </div>
+  </aside>
+
+  <!-- 浮动操作 -->
+  <div class="float-actions">
+    <a class="float-btn" href="#footer" aria-label="联系客服">
+      <svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg>
+      <span>客服</span>
+    </a>
+    <button class="float-btn" id="backTop" type="button" aria-label="回到顶部">
+      <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+      <span>顶部</span>
+    </button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js" defer charset="UTF-8" onerror="document.documentElement.classList.remove('js')"></script>
+</body>
+</html>
