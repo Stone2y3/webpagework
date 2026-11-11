@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="theme-blue">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>排行榜 · BUAA OJ</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('oj_theme');
+        if (t !== 'theme-blue' && t !== 'theme-green' && t !== 'theme-dark') t = 'theme-blue';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'theme-blue');
+      }
+    })();
+  </script>
+</head>
+<body data-page="leaderboard">
+  <header class="navbar" id="appNav"></header>
+
+  <main class="page">
+    <div id="leaderboardRoot"></div>
+  </main>
+
+  <footer class="site-footer" id="appFooter"></footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

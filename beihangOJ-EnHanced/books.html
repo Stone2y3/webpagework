@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="theme-blue">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>好书推荐 · BUAA OJ</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('oj_theme');
+        if (t !== 'theme-blue' && t !== 'theme-green' && t !== 'theme-dark') t = 'theme-blue';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'theme-blue');
+      }
+    })();
+  </script>
+</head>
+<body data-page="books">
+  <header class="navbar" id="appNav"></header>
+
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <h1>好书推荐</h1>
+        <p>课程配套教材与经典参考书。绿皮的《C 语言程序设计》系列是课程指定用书，书后刮刮卡可用于注册本平台账号。</p>
+      </div>
+      <div class="page-head-side">
+        <span class="pill">休闲区 · 阅读</span>
+      </div>
+    </div>
+
+    <div class="home-grid">
+      <div class="col-main">
+        <section class="card">
+          <div class="card-head">
+            <h2>教材与参考书</h2>
+            <span class="muted">共 4 本</span>
+          </div>
+
+          <div class="book-list">
+            <article class="book-item">
+              <p class="book-title">《C 语言程序设计——原理与实践》</p>
+              <p class="book-meta">宋友、王君臣、肖文磊、李莹、谭火彬 · 高等教育出版社 · 2022</p>
+              <button class="toggle-btn js-toggle-book" type="button" data-target="bookInfo1">查看更多 ▾</button>
+              <div class="book-info hidden" id="bookInfo1">
+                本书封四（封底）有一个刮刮卡，里面是一串 <strong>20 位数字</strong>，读者可以凭此数字获得 OJ 平台的一个帐号，用户名、密码规则为：<br>
+                <strong>用户名：</strong>前 8 位数字 @hep.cc<br>
+                <strong>密　码：</strong>后 4 位数字<br><br>
+                例如，若这 20 位数字为 <span class="mono">123456 789012 3456 7890</span>，则用户名、密码为：<br>
+                用户名：<span class="mono">12345678@hep.cc</span><br>
+                密　码：<span class="mono">7890</span><br><br>
+                若无刮刮卡数字，或数字不能登录 OJ 平台，或数字重复（登录冲突），则购买的可能是盗版书。
+              </div>
+            </article>
+
+            <article class="book-item">
+              <p class="book-title">《C 语言程序设计实训教程》</p>
+              <p class="book-meta">李辉勇、李莹、孙笑寒、宋友 · 高等教育出版社 · 2023</p>
+              <button class="toggle-btn js-toggle-book" type="button" data-target="bookInfo2">查看更多 ▾</button>
+              <div class="book-info hidden" id="bookInfo2">
+                与主教材配套的上机实训手册，按章节给出上机任务与调试要点。本书的题目顺序与本平台学习路径中的
+                <strong>C 上机赛</strong>基本对应，做完一章作业赛再来做上机赛，效果最好。
+              </div>
+            </article>
+
+            <article class="book-item">
+              <p class="book-title">《C 程序设计导引》（第 2 版）</p>
+              <p class="book-meta">尹宝林 编著 · 机械工业出版社 · 2020</p>
+              <button class="toggle-btn js-toggle-book" type="button" data-target="bookInfo3">查看更多 ▾</button>
+              <div class="book-info hidden" id="bookInfo3">
+                面向零基础读者的入门读物，语法讲解细致，例题短小。适合在课程前两周配合课件阅读，
+                重点看变量、表达式与流程控制三章。
+              </div>
+            </article>
+
+            <article class="book-item">
+              <p class="book-title">《C 程序设计语言》The C Programming Language</p>
+              <p class="book-meta">B. W. Kernighan, D. M. Ritchie · 机械工业出版社 · 2012 · 徐宝文等译</p>
+              <button class="toggle-btn js-toggle-book" type="button" data-target="bookInfo4">查看更多 ▾</button>
+              <div class="book-info hidden" id="bookInfo4">
+                C 语言之父亲笔，篇幅精炼、密度极高。不建议作为入门第一本书，但学完指针与结构体之后
+                再读第 5、6 章，会理解很多“为什么这样设计”的问题。
+              </div>
+            </article>
+          </div>
+
+          <div class="book-grid">
+            <div class="book-card highlight">
+              <div class="book-cover">
+                <img src="images/book1.png" alt="《C 语言程序设计——原理与实践》封面" width="548" height="754">
+              </div>
+              <p class="book-caption">《C 语言程序设计——原理与实践》<br>课程主教材 · 高等教育出版社</p>
+            </div>
+            <div class="book-card">
+              <div class="book-cover">
+                <img src="images/book2.png" alt="《C 语言程序设计实训教程》封面" width="562" height="767">
+              </div>
+              <p class="book-caption">《C 语言程序设计实训教程》<br>上机实训配套 · 高等教育出版社</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="col-side">
+        <section class="card">
+          <div class="card-head"><h2>刮刮卡账号</h2></div>
+          <p style="font-size:13.5px;line-height:1.9;color:var(--text-2);">
+            主教材封底的 20 位数字就是你的 OJ 账号凭证：<b>前 8 位</b>拼上 <span class="mono">@hep.cc</span> 作为用户名，
+            <b>后 4 位</b>作为密码。
+          </p>
+          <p style="font-size:13.5px;line-height:1.9;color:var(--text-2);margin-top:10px;">
+            也可以使用学工号登录：密码为「学工号@buaa.edu.cn」，登录后右上角显示为所在年级。
+          </p>
+          <a class="btn btn-primary btn-block js-login-hint" href="#" style="margin-top:16px;">用刮刮卡数字登录</a>
+        </section>
+
+        <section class="card">
+          <div class="card-head"><h2>阅读建议</h2></div>
+          <ul style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--text-2);line-height:1.8;">
+            <li>① 课前翻一遍讲义，把例题敲进编辑器跑一遍。</li>
+            <li>② 作业赛先做，卡住再看提示，不要直接搜题解。</li>
+            <li>③ 上机赛限时 2 小时，平时练习时也给自己计时。</li>
+            <li>④ 错题本里定期回看，比重做新题更有价值。</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="appFooter"></footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="theme-blue">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小游戏 · BUAA OJ</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('oj_theme');
+        if (t !== 'theme-blue' && t !== 'theme-green' && t !== 'theme-dark') t = 'theme-blue';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'theme-blue');
+      }
+    })();
+  </script>
+</head>
+<body data-page="game">
+  <header class="navbar" id="appNav"></header>
+
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <h1>休闲区 · 贪吃蛇</h1>
+        <p>写不动代码的时候来一局。方向键或 WASD 控制，吃得越多速度越快，最高分会保存在本机。</p>
+      </div>
+      <div class="page-head-side">
+        <span class="pill">休闲区 · 小游戏</span>
+      </div>
+    </div>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>贪吃蛇</h2>
+        <span class="muted">纯 Canvas 实现，无外部依赖</span>
+      </div>
+
+      <div class="game-wrap">
+        <div class="game-stage">
+          <canvas id="snakeCanvas" width="484" height="484" aria-label="贪吃蛇游戏画布"></canvas>
+        </div>
+
+        <aside class="game-side">
+          <div class="game-score">
+            <div class="score-cell"><span>当前得分</span><b id="snakeScore">0</b></div>
+            <div class="score-cell"><span>最高分</span><b id="snakeBest">0</b></div>
+          </div>
+
+          <p class="game-state" id="snakeState">准备开始</p>
+
+          <div class="btn-group">
+            <button class="btn btn-primary btn-sm" type="button" id="snakeStart">开始游戏</button>
+            <button class="btn btn-ghost btn-sm" type="button" id="snakePause">暂停</button>
+            <button class="btn btn-ghost btn-sm" type="button" id="snakeReset">重置</button>
+          </div>
+
+          <div class="dpad">
+            <button class="up" type="button" data-dir="up" aria-label="上">↑</button>
+            <button class="left" type="button" data-dir="left" aria-label="左">←</button>
+            <button class="down" type="button" data-dir="down" aria-label="下">↓</button>
+            <button class="right" type="button" data-dir="right" aria-label="右">→</button>
+          </div>
+
+          <p class="game-tips">
+            <kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd> 或 <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 控制方向。<br>
+            撞到墙或自己的身体即结束；分数每增加 50，速度提升一档。
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="appFooter"></footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
